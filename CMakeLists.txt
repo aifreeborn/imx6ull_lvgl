@@ -21,7 +21,7 @@ endif()
 
 set(LV_BUILD_USE_KCONFIG ON CACHE BOOL "use kconfig" FORCE)
 set(DOTCONFIG "${CMAKE_CURRENT_LIST_DIR}/.config")
-set(DEFCONFIG "${CMAKE_CURRENT_LIST_DIR}/configs/get_started.defconfig")
+set(DEFCONFIG "${CMAKE_CURRENT_LIST_DIR}/configs/linux_100ask_imx6ull.defconfig")
 set(LV_BUILD_KCONFIG_ROOT "${CMAKE_CURRENT_LIST_DIR}/Kconfig" CACHE PATH "path to root kconfig" FORCE)
 
 if(EXISTS "${DOTCONFIG}")
