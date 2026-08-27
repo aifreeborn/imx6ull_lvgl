@@ -156,6 +156,11 @@ int main(int argc, char ** argv)
 
     /* Initialize LVGL. */
     lv_init();
+	lv_group_t * default_group = lv_group_create();
+    if(default_group == NULL) {
+        die("Failed to create default input group");
+    }
+    lv_group_set_default(default_group);
 
     /* Initialize the configured backend */
     if(driver_backends_init_backend(selected_backend) == -1) {
