@@ -7,6 +7,7 @@
 #include "lib/driver_backends.h"
 #include "lib/simulator_util.h"
 #include "lib/simulator_settings.h"
+#include "imx6ull_board/imx6ull_board.h"
 
 /* Internal functions */
 
@@ -19,6 +20,8 @@ extern simulator_settings_t settings;
 
 int main(int argc, char ** argv)
 {
+	(void)argc;
+	(void)argv;
     /* Initialize LVGL. */
     lv_init();
 
@@ -50,9 +53,7 @@ int main(int argc, char ** argv)
     }
 #endif
 
-	lv_obj_t * label = lv_label_create(lv_screen_active());
-    lv_label_set_text_static(label, "Demos not enabled, create your own ui in `src/main.c`");
-    lv_obj_center(label);
+    imx6ull_board_widgets();
 
     while(1) {
         uint32_t ms = lv_timer_handler();
