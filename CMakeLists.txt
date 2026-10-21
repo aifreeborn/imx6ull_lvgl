@@ -52,6 +52,7 @@ else()
 endif()
 
 add_subdirectory(lvgl)
+add_subdirectory(boards/imx6ull_pro)
 
 if(CONFIG_LV_USE_DEMO_TRUCK)
     add_subdirectory(demos/lv_demo_truck)
@@ -95,9 +96,8 @@ endif()
 target_link_libraries(lvgl_linux PUBLIC ${LIBS})
 add_executable(lvglsim
     src/main.c
-    src/imx6ull_board/imx6ull_board.c
 )
-target_link_libraries(lvglsim PUBLIC lvgl_linux ${EXTRA_LIBS})
+target_link_libraries(lvglsim PUBLIC lvgl_linux imx6ull_pro::imx6ull_pro ${EXTRA_LIBS})
 
 if(WERROR)
     target_compile_options(lvglsim PRIVATE -Werror)

@@ -7,7 +7,7 @@
 #include "lib/driver_backends.h"
 #include "lib/simulator_util.h"
 #include "lib/simulator_settings.h"
-#include "imx6ull_board/imx6ull_board.h"
+#include "imx6ull_pro.h"
 
 /* Internal functions */
 
@@ -20,8 +20,8 @@ extern simulator_settings_t settings;
 
 int main(int argc, char ** argv)
 {
-	(void)argc;
-	(void)argv;
+    (void)argc;
+    (void)argv;
     /* Initialize LVGL. */
     lv_init();
 
@@ -53,7 +53,7 @@ int main(int argc, char ** argv)
     }
 #endif
 
-    imx6ull_board_widgets();
+    imx6ull_pro_widgets();
 
     while(1) {
         uint32_t ms = lv_timer_handler();

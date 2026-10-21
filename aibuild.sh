@@ -39,6 +39,7 @@ function aibuild_arm_lvgl()
     mkdir -p ${RELEASE_PATH}
     cp -af ${OUT_PATH}/build/bin/lvglsim ${RELEASE_PATH}/
     cp -af ${OUT_PATH}/_install ${RELEASE_PATH}/
+    cp -af boards/imx6ull_pro/images "${RELEASE_PATH}/"
 }
 
 function aibuild_linuxpc_lvgl()
