@@ -10,13 +10,18 @@ export TARGET_OS="${TARGET_OS:-arm}"
 TOP_PATH=$(pwd)
 export OUT_PATH=${TOP_PATH}/out
 RELEASE_PATH=${OUT_PATH}/release
+TARGET_PATH=${OUT_PATH}/obj
 
 mkdir -p "${OUT_PATH}"
+if [[ ! -d "${TARGET_PATH}" ]];then
+    mkdir -p "${TARGET_PATH}"
+fi
 exec > >(tee "${OUT_PATH}/build.log") 2>&1
 
 function aibuild_libevdev()
 {
-    pushd ./external/libevdev
+    tar -xvf ${TOP_PATH}/external/libevdev.tar.gz -C ${TARGET_PATH}
+    pushd ${TARGET_PATH}/libevdev
     ./autogen.sh
     ./configure --host=arm-none-linux-gnueabihf CC=arm-none-linux-gnueabihf-gcc --prefix="${OUT_PATH}/_install"
     make -j4 && make install
