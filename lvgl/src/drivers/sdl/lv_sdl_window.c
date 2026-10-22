@@ -298,7 +298,7 @@ static lv_result_t window_create(lv_display_t * disp)
 
     int32_t hor_res = (int32_t)((float)(disp->hor_res) * dsc->zoom);
     int32_t ver_res = (int32_t)((float)(disp->ver_res) * dsc->zoom);
-    dsc->window = SDL_CreateWindow("LVGL Simulator",
+    dsc->window = SDL_CreateWindow("imx6ull pro SDL Window",
                                    SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
                                    hor_res, ver_res, flag);       /*last param. SDL_WINDOW_BORDERLESS to hide borders*/
     if(!dsc->window) {
