@@ -1,0 +1,9 @@
+Package: imx6ull-pro-lvgl
+Version: 1.0.0
+Section: graphics
+Priority: optional
+Architecture: armhf
+Depends: libc6 (>= 2.34)
+Maintainer: i.MX6ULL Project
+Description: LVGL framebuffer application and runtime assets for i.MX6ULL
+ LVGL application packaged for 32-bit ARM hard-float Linux systems.
